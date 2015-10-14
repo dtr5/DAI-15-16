@@ -23,5 +23,6 @@ public class Practica2  {
 		
 		System.out.println("Fallaste " + result.getFailureCount() + " de " + result.getRunCount() + " pruebas"); 
 
+		System.exit(0);
 	}
 }
