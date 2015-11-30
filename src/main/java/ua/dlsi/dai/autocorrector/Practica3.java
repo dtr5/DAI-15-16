@@ -12,7 +12,7 @@ public class Practica3  {
 	
     public static void main(String[] args) {
     	
-		url = "http://localhost:8080/p3/p3";
+		url = "http://localhost:8080/p3";
 
 		JUnitCore junit = new JUnitCore();
 		Result result = junit.run(Practica3Tests.class);
