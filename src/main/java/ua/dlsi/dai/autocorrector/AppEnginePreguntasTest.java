@@ -19,7 +19,7 @@ public class AppEnginePreguntasTest {
 	@BeforeClass
 	public static void create() {
 		driver = new SafeDriver();
-		driver.get("http://localhost:8080/nuevocuestionario?tema=Alicante");
+		driver.get(Practica4.url + "/nuevocuestionario?tema=Alicante");
 		try {
 			text = driver.findElement(By.cssSelector("#email"));
 			if (text != null) {
@@ -32,7 +32,7 @@ public class AppEnginePreguntasTest {
 			}
 		} catch (Exception e) {
 		}
-		driver.get("http://localhost:8080/_ah/logout?continue=%2Fmain");
+		driver.get(Practica4.url + "/_ah/logout?continue=%2Fmain");
 	}
 
 	@Before
@@ -47,7 +47,7 @@ public class AppEnginePreguntasTest {
 
 	@Test
 	public void addPreguntaAppEngine() throws Exception {
-		driver.get("http://localhost:8080/main");
+		driver.get(Practica4.url + "/main");
 
 		Util.appEngineLogin(driver);
 
@@ -79,7 +79,7 @@ public class AppEnginePreguntasTest {
 		Assert.assertNotNull("No existe el botón salir", button);
 		button.click();
 
-		driver.get("http://localhost:8080/main");
+		driver.get(Practica4.url + "/main");
 
 		Util.appEngineLogin(driver);
 
@@ -108,7 +108,7 @@ public class AppEnginePreguntasTest {
 
 	@Test
 	public void addPreguntaServiceAppEngine() throws Exception {
-		driver.get("http://localhost:8080/nuevapregunta?tema=Alicante&respuesta=false&pregunta=1234");
+		driver.get(Practica4.url + "/nuevapregunta?tema=Alicante&respuesta=false&pregunta=1234");
 
 		WebElement button = driver.findElement(By.cssSelector(".btn-lg"));
 		Assert.assertNull(
@@ -117,7 +117,7 @@ public class AppEnginePreguntasTest {
 
 		Util.appEngineHalfLogin(driver);
 
-		driver.get("http://localhost:8080/main");
+		driver.get(Practica4.url + "/main");
 		Thread.sleep(1000);
 
 		button = driver.findElement(By.cssSelector("#nuevoCuestionario"));
