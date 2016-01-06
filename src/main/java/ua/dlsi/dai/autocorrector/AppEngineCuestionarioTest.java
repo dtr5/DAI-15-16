@@ -37,7 +37,7 @@ public class AppEngineCuestionarioTest {
 
 	@Test
 	public void crearCuestionarioAppEngine() throws Exception {
-		driver.get(Practica4.url + "main");
+		driver.get(Practica4.url + "/main");
 
 		Util.appEngineLogin(driver);
 
